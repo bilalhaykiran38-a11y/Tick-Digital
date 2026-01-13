@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Canlı Yayın</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      display: none;
+    }
+    #startText {
+      color: white;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<div id="startText">Başlamak için dokun</div>
+
+<video id="myVideo" loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<script>
+  const video = document.getElementById("myVideo");
+  const text = document.getElementById("startText");
+
+  document.body.addEventListener("click", function () {
+    text.style.display = "none";
+    video.style.display = "block";
+    video.play();
+  });
+</script>
+
+</body>
+</html>
